@@ -1,0 +1,158 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    // カーソル移動
+    {
+        "key": "ctrl+u",
+        "command": "cursorPageUp",
+        "when": "editorTextFocus"
+    }
+    ,{
+        "key": "ctrl+v",
+        "command": "cursorPageDown",
+        "when": "editorTextFocus"
+    }
+    // 単語ごとにカーソル移動する
+    ,{
+        "key": "ctrl+.",
+        "command": "cursorWordEndRight",
+        "when": "editorTextFocus"
+    }
+    ,{
+        "key": "ctrl+,",
+        "command": "cursorWordStartLeft",
+        "when": "editorTextFocus"
+    }
+    // コードの上下移動
+    ,{
+        "key": "shift+cmd+down",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    }
+    ,{
+        "key": "shift+cmd+up",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    }
+    // 既存のコードの上下移動を無効にする
+    ,{
+        "key": "alt+down",
+        "command": ""
+    }
+    ,{
+        "key": "alt+up",
+        "command": ""
+    }
+    // コードジャンプの設定する
+    ,{
+        "key": "cmd+l",
+        "command": "workbench.action.gotoLine"
+    }
+    // 同一文字を選択する
+    ,{
+        "key": "ctrl+g",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    }
+    // 選択した変数名を一括置換する
+    ,{
+        "key": "cmd+alt+e",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    }
+    // 選択した行を複製する
+    ,{
+        "key": "cmd+d",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    }
+    // コマンドを無効にする
+    ,{
+        "key": "ctrl+cmd+[",
+        "command": ""
+    }
+    ,{
+        "key": "ctrl+cmd+]",
+        "command": ""
+    }
+    // カーソルの下に改行を入れる
+    ,{
+        "key": "cmd+enter",
+        "command": "lineBreakInsert",
+        "when": "editorTextFocus && !editorReadonly"
+    }
+    // タブ移動する
+    ,{
+        "key": "shift+cmd+[",
+        "command": "workbench.action.previousEditor"
+    }
+    ,{
+        "key": "shift+cmd+]",
+        "command": "workbench.action.nextEditor"
+    }
+    // コンソールを開かせない
+    ,{
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    }
+    // 小文字/大文字の変換
+    ,{
+        "key": "shift+cmd+x",
+        "command": "editor.action.transformToUppercase",
+        "when": "editorTextFocus"
+    }
+    ,{
+        "key": "shift+cmd+y",
+        "command": "editor.action.transformToLowercase",
+        "when": "editorTextFocus"
+    }
+    // 対のカッコに移動する
+    ,{
+        "key": "ctrl+cmd+[",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    }
+    ,{
+        "key": "ctrl+cmd+]",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    }
+    // インデントを無効にする
+    ,{
+        "key": "cmd+[",
+        "command": "",
+        "when": ""
+    }
+    ,{
+        "key": "cmd+]",
+        "command": "",
+        "when": ""
+    }
+    // 言語を変更
+    ,{
+        "key": "shift+cmd+l",
+        "command": "workbench.action.editor.changeLanguageMode"
+    }
+    // View の選択切り替えを行う
+    ,{
+        "key": "cmd+1",
+        "command": "workbench.view.explorer"
+    }
+    ,{
+        "key": "cmd+2",
+        "command": "workbench.view.search",
+        "when": "!editorFocus && !searchViewletVisible"
+    }
+    ,{
+        "key": "cmd+3",
+        "command": "workbench.view.scm"
+    }
+    ,{
+        "key": "cmd+4",
+        "command": "workbench.view.debug"
+    }
+    ,{
+        "key": "cmd+5",
+        "command": "workbench.view.extensions"
+    }
+]

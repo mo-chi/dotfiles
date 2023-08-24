@@ -1,0 +1,134 @@
+// Place your settings in this file to overwrite the default settings
+{
+    // // editor
+
+        // フォントファミリの設定
+        "editor.fontFamily": "SourceHanCodeJP-Regular",
+        // "editor.fontLigatures": "'ccmp' off",
+        // フォントサイズの設定
+        "editor.fontSize": 12,
+        // 行の高さ
+        "editor.lineHeight": 18,
+        // フォントの太さの設定
+        "editor.fontWeight": "400",
+        // 括弧開きを入力したとき括弧閉じを自動的に入れない
+        "editor.autoClosingBrackets": "never",
+        // 最終行以上はスクロールさせない
+        "editor.scrollBeyondLastLine": false,
+        // ミニマップを表示設定
+        "editor.minimap.enabled": false,
+        // 80 桁目の位置に線を表示する
+        "editor.rulers": [80],
+
+    // files
+
+        // 文字コードの自動判定をオフにする
+        "files.autoGuessEncoding": true,
+        // 保存時に空行や末尾の空白を削除する
+        "files.trimTrailingWhitespace": true,
+        // 最終行に改行を入れる
+        "files.insertFinalNewline": true,
+        // "workbench.welcome.enabled": false,
+        "workbench.colorTheme": "Monokai",
+        // activitybar を表示する
+        "workbench.activityBar.visible": true,
+        // ステータスバーを表示する
+        "workbench.statusBar.visible": true,
+        // ステータスバーにある feedback を非表示する
+        "workbench.statusBar.feedback.visible": false,
+        // エディタが起動時に表示を制御する
+        "workbench.startupEditor": "newUntitledFile",
+
+    // terminal
+
+        // 開くターミナルを設定する
+        "terminal.external.osxExec": "/Applications/iTerm.app",
+
+    // language
+
+        "[go]": {
+            "editor.tabSize": 8,
+            "editor.insertSpaces": false
+        },
+        "[ruby]": {
+            "editor.tabSize": 2
+        },
+        "[python]": {
+            "editor.tabSize": 4
+        },
+        "[javascript]": {
+            "editor.tabSize": 2
+        },
+        "[html]": {
+            "editor.tabSize": 2
+        },
+        "[css]": {
+            "editor.tabSize": 2
+        },
+        "[dart]": {
+            "editor.tabSize": 2,
+            "editor.formatOnSave": true
+        },
+        "[markdown]": {
+            "editor.wordWrap": "off",
+        },
+
+    // emmet
+
+        "emmet.triggerExpansionOnTab": true,
+
+    // extensions
+
+        "extensions.ignoreRecommendations": true,
+        "extensions.autoUpdate": false,
+
+    // plugin - go
+        // defalut は `goreturns` なので `gofmt` に変更する
+        // SEE: https://code.visualstudio.com/docs/languages/go#_formatting
+        "go.formatTool": "gofmt",
+
+    // // plugin - todohighlight
+        // SEE: https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
+        "todohighlight.isEnable": true,
+        "todohighlight.keywords": [
+            "TODO:",
+            "FIXME:",
+            {
+                "text": "NOTE:",
+                "color": "#000",
+                "backgroundColor": "yellow"
+            },
+            {
+                "text": "HACK:",
+                "color": "#000",
+                "backgroundColor": "yellow"
+            },
+            {
+                "text": "DEBUG:",
+                "color": "#000",
+                "backgroundColor": "yellow"
+            },
+            {
+                "text": "REVIEW:",
+                "color": "#000",
+                "backgroundColor": "yellow"
+            },
+            {
+                "text": "SEE:",
+                "color": "#000",
+                "backgroundColor": "yellow"
+            }
+        ],
+
+    "breadcrumbs.enabled": true,
+    "editor.renderControlCharacters": true,
+    "files.autoSave": "off",
+    "plantuml.render": "Local",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    }
+}

@@ -1,0 +1,14 @@
+\#*#
+*#
+.*~
+*~
+.#*
+*.log
+*.o
+.DS_Store
+*.dSYM
+*.sw[po]
+vim/bundle/
+vim/.netrwhist
+
+!.gitkeep

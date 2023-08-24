@@ -1,0 +1,37 @@
+# 行数を表示する
+# set blame-view  = date:default author:full file-name:auto id:yes,color line-number:no,interval=5 text
+# set grep-view = file-name:no line-number:yes,interval=1 text
+# set main-view = line-number:no,interval=5 id:no date:default author:full commit-title:yes,graph,refs,overflow=no
+# set refs-view = line-number:no id:no date:default author:full ref commit-title
+# set stash-view  = line-number:no,interval=5 id:no date:default author:full commit-title
+# set status-view = line-number:no,interval=5 status:short file-name
+# set tree-view = line-number:no,interval=5 mode author:full file-size date:default id:no file-name
+#
+# # Pager based views
+# set pager-view  = line-number:no,interval=5 text
+# set stage-view  = line-number:no,interval=5 text
+# set log-view  = line-number:no,interval=5 text
+# set blob-view = line-number:no,interval=5 text
+# set diff-view = line-number:no,interval=5 text:yes,commit-title-overflow=no
+
+
+# utf-8 文字で画面描画する
+# set line-graphics = utf-8
+
+# 差分表示に diff-highlight を使う
+set diff-options = -m --first-parent
+
+# タブサイズ
+# set tab-size = 4
+
+# 水平分割したウィンドウの下画面サイズを % で指定 (行数指定も可)
+set split-view-height = 80%
+
+# 自動的にエディタに行番号を表示する
+set editor-line-number = yes
+
+# 履歴の保存数
+set history-size = 0
+
+# マウスを有効にする
+# set mouse = true

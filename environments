@@ -1,0 +1,39 @@
+#############################################
+# PC 用の設定
+#############################################
+# git
+export GIT_COMMITTER_NAME="GIT_COMMITTER_NAME"
+export GIT_AUTHOR_NAME="GIT_AUTHOR_NAME"
+export EMAIL="EMAIL"
+
+#############################################
+# Java
+#############################################
+# export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+
+#############################################
+# PostgreSQL
+#############################################
+# export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+# alias psql-start="pg_ctl -D /usr/local/var/postgresql@9.6 start"
+# alias psql-stop="pg_ctl -D /usr/local/var/postgresql@9.6 stop"
+# alias psql-restart="pg_ctl -D /usr/local/var/postgresql@9.6 restart"
+# alias psql-status="pg_ctl -D /usr/local/var/postgresql@9.6 status"
+
+#############################################
+# MySQL
+#############################################
+# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# alias mysql-start="mysql.server start"
+# alias mysql-stop="mysql.server stop"
+
+#############################################
+# Redis
+#############################################
+# export PATH="/usr/local/opt/redis@3.2/bin:$PATH"
+# alias redis-start="redis-server /usr/local/etc/redis.conf"
+
+#############################################
+# Elasticsearch
+#############################################
+# export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"

@@ -1,0 +1,71 @@
+[alias]
+  # ###########################
+  # git alias commands
+  # ###########################
+  alias = !git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+  all   = add -A
+  amend = commit --amend
+  b     = branch
+  ba    = branch -a
+  branches = branch -a
+  del   = branch -D
+  ci    = commit
+  co    = checkout
+  cp    = cherry-pick
+  conflict = ls-files -u
+  difff = diff --word-diff
+  di    = diff
+  dc    = diff --cached
+  diff-branch = "!f(){ git log --no-merges $1..$2; };f"
+  find  = "!git ls-files | grep -i"
+  graph = log --graph --oneline --decorate=full
+  l     = log
+  ll    = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  edited-files = log --name-only --oneline
+  ls    = ls-files
+  remotes = remote -v
+  rc      = rm --cached
+  restart = reset --hard HEAD
+  refresh = !git fetch origin && git remote prune origin
+  replica = checkout -b
+  rename  = branch -m
+  st      = status
+  sts     = status -sb
+  stashes = stash list
+  sh      = show
+  tags    = tag -l
+  uncommit = reset --soft HEAD^
+  unify   = "!f(){ git rebase -i HEAD~$1; };f"
+  wc      = whatchanged
+  org-push = !git push origin `git rev-parse --abbrev-ref HEAD`
+  org-pull = !git pull origin `git rev-parse --abbrev-ref HEAD`
+  ol      = log --oneline
+  graft   = cherry-pick -rn # graft   : 移植する,接ぎ木する
+  migrate = cherry-pick -rn # migrate : 移動する
+  return  = checkout -
+  restaged = restore --staged
+  # ###########################
+  # git flow alias commands
+  # ###########################
+  ffs   = flow feature start
+  fff   = flow feature finish
+  frs   = flow release start
+  frf   = flow release finish
+  fhs   = flow hotfix start
+  fhf   = flow hotfix finish
+  fss   = flow support start
+  fsf   = flow support finish
+[color]
+  ui = true
+[core]
+  editor = /usr/bin/vim
+[color "status"]
+  added = green
+  changed = red
+  untracked = yellow
+[merge]
+  tool = vimdiff2
+[mergetool]
+  keepBackup = false
+[tag]
+  sort = version:refname
