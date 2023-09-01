@@ -12,6 +12,9 @@ echo "setup を開始します"
 # asdf プラグインの追加
 ./asdf.sh
 
+# VSCode プラグインの追加
+./vscode/extensions.sh
+
 # git submodule の設定
 echo "git submodule のインストール"
 git submodule update
