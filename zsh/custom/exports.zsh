@@ -1,11 +1,4 @@
 # ------------------------------------
-# Android
-# ------------------------------------
-# if [ -d $HOME/Library/Android ]; then
-#     export ANDROID_HOME="$HOME/Library/Android/sdk"
-# fi
-
-# ------------------------------------
 # Homebrew
 # ------------------------------------
 # analytics を無効にする
