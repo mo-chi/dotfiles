@@ -51,11 +51,6 @@ ipinfo() {
   curl -s ipinfo.io
 }
 
-# HTTP Server
-alias py3-server='python3 -m http.server 8000'
-alias rb-server='ruby -run -e httpd . -p 8000'
-alias php-server='php -S 0.0.0.0:8000'
-
 # ------------------------------------
 # Applications
 # ------------------------------------
@@ -91,27 +86,10 @@ balias() {
 # ------------------------------------
 # Python
 # ------------------------------------
-# pipenv
-alias ppython='pipenv run python'
-alias pprun='pipenv run'
-alias ppi='pipenv install'
-alias ppi='pipenv run pip list'
 # pytest
 alias pytest-cov='pytest -v --cov --cov-report=html && open htmlcov/index.html'
 # pip
 alias pip-all-uninstall='pip freeze | xargs pip uninstall -y'
-
-# # ------------------------------------
-# # Android
-# # ------------------------------------
-# ANDROID_SDK="$HOME/Library/Android/sdk"
-# ANDROID_TOOLS="$ANDROID_SDK/tools"
-# ANDROID_BIN="$ANDROID_TOOLS/bin"
-#
-# alias android=$ANDROID_TOOLS/android
-# alias emulator=$ANDROID_TOOLS/emulator
-# alias avdmanager=$ANDROID_BIN/avdmanager
-# alias sdkmanager=$ANDROID_BIN/sdkmanager
 
 # ------------------------------------
 # Docker alias and function
@@ -160,90 +138,17 @@ dalias() {
 # Docker compose alias and function
 # see: https://gist.github.com/maxcnunes/7b5eae9cb884f126a70f#file-alias-docker-compose-sh
 # ------------------------------------
-alias dc='docker-compose'
-alias dcb='docker-compose build'
-alias dcup='docker-compose up'
-alias dcr='docker-compose run'
-alias dcps='docker-compose ps'
-alias dclogs='docker-compose logs'
-alias dcdown='docker-compose down'
-alias dcstart='docker-compose start'
-alias dcstop='docker-compose stop'
+alias dc='docker compose'
+alias dcb='docker compose build'
+alias dcup='docker compose up'
+alias dcr='docker compose run'
+alias dcps='docker compose ps'
+alias dclogs='docker compose logs'
+alias dcdown='docker compose down'
+alias dcstart='docker compose start'
+alias dcstop='docker compose stop'
 
 dcrm() {
-	docker-compose stop $1
-	docker-compose rm --force $1
+	docker compose stop $1
+	docker compose rm --force $1
 }
-
-# ------------------------------------
-# Docker machine alias and function
-# ------------------------------------
-alias dm='docker-machine'
-alias dmcv='docker-machine create --driver virtualbox'
-alias dmstop='docker-machine stop'
-alias dml='docker-machine ls'
-alias dmst='docker-machine status'
-alias dmssh='docker-machine ssh'
-alias dmrm='docker-machine rm'
-alias dmrc='docker-machine regenerate-certs'
-alias dmip='docker-machine ip'
-
-dmstart() {
-  docker-machine start $1
-  dmenv $1
-}
-dmenv() {
-  eval $(docker-machine env $1)
-}
-
-# ------------------------------------
-# Kubernetes alias and function
-# see: https://gist.github.com/tamas-molnar/32a07c0eb83e95484e3cdb4b7fada32b
-# ------------------------------------
-alias kc='kubectl'
-alias kcl='kubectl logs'
-alias kclf='kubectl logs -f'
-alias kcgp='kubectl get pod -o wide'
-alias kcgn='kubectl get node -o wide'
-alias kcgd='kubectl get deployment -o wide'
-alias kcgs='kubectl get service -o wide'
-alias kcgi='kubectl get ingress -o wide'
-alias kcdp='kubectl describe pod'
-alias kcdd='kubectl describe deployment'
-alias kcds='kubectl describe service'
-alias kcdi='kubectl describe ingress'
-alias kcc='kubectl create'
-alias kccf='kubectl create -f'
-alias kcaf='kubectl apply -f'
-alias kcd='kubectl delete'
-alias kcdf='kubectl delete -f'
-alias kcp='kubectl proxy'
-alias kcci='kubectl cluster-info'
-
-kcex() {
-  kubectl exec -it $1 /bin/bash
-}
-kcpodname() {
-  echo $(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
-}
-# Used to kill a pod now!
-kcdk() {
-  kubectl delete pod $1 --grace-period=0 --force
-}
-# Used to re-create a resource
-kcr() {
-  kubectl delete -f $1
-  kubectl create -f $1
-}
-kcalias() {
-  alias | grep 'kubectl' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/" | sed "s/['|\']//g";
-}
-
-# ------------------------------------
-# minikube alias
-# ------------------------------------
-# alias mk='minikube'
-#
-# mkenv() {
-#   eval $(minikube docker-env)
-# }
