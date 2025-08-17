@@ -59,6 +59,7 @@
   ui = true
 [core]
   editor = /usr/bin/vim
+  quotepath = false
 [color "status"]
   added = green
   changed = red
