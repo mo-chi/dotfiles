@@ -30,8 +30,6 @@
         "files.insertFinalNewline": true,
         // "workbench.welcome.enabled": false,
         "workbench.colorTheme": "Monokai",
-        // activitybar を表示する
-        "workbench.activityBar.visible": true,
         // ステータスバーを表示する
         "workbench.statusBar.visible": true,
         // ステータスバーにある feedback を非表示する
