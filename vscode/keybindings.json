@@ -1,7 +1,22 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    // カーソル移動
+    // ----------------------------------------------------
+    // タブ系
+    // ----------------------------------------------------
+    // タブを移動する
     {
+        "key": "shift+cmd+[",
+        "command": "workbench.action.previousEditor"
+    }
+    ,{
+        "key": "shift+cmd+]",
+        "command": "workbench.action.nextEditor"
+    }
+    // ----------------------------------------------------
+    // カーソル系
+    // ----------------------------------------------------
+    // 1 画面分カーソルを上下移動する
+    ,{
         "key": "ctrl+u",
         "command": "cursorPageUp",
         "when": "editorTextFocus"
@@ -11,7 +26,7 @@
         "command": "cursorPageDown",
         "when": "editorTextFocus"
     }
-    // 単語ごとにカーソル移動する
+    // 単語分カーソルを前後移動する
     ,{
         "key": "ctrl+.",
         "command": "cursorWordEndRight",
@@ -22,7 +37,21 @@
         "command": "cursorWordStartLeft",
         "when": "editorTextFocus"
     }
-    // コードの上下移動
+    // 対のカッコへカーソルを移動する
+    ,{
+        "key": "ctrl+cmd+[",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    }
+    ,{
+        "key": "ctrl+cmd+]",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    }
+    // ----------------------------------------------------
+    // 移動系
+    // ----------------------------------------------------
+    // コードを上下移動する
     ,{
         "key": "shift+cmd+down",
         "command": "editor.action.moveLinesDownAction",
@@ -33,69 +62,45 @@
         "command": "editor.action.moveLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
     }
-    // 既存のコードの上下移動を無効にする
-    ,{
-        "key": "alt+down",
-        "command": ""
-    }
-    ,{
-        "key": "alt+up",
-        "command": ""
-    }
-    // コードジャンプの設定する
-    ,{
-        "key": "cmd+l",
-        "command": "workbench.action.gotoLine"
-    }
+    // ----------------------------------------------------
+    // 選択系
+    // ----------------------------------------------------
     // 同一文字を選択する
     ,{
         "key": "ctrl+g",
         "command": "editor.action.addSelectionToNextFindMatch",
         "when": "editorFocus"
     }
-    // 選択した変数名を一括置換する
+    // マルチカーソルで複数行選択する
     ,{
-        "key": "cmd+alt+e",
-        "command": "editor.action.rename",
-        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+        "key": "shift+alt+up",
+        "command": "editor.action.insertCursorAbove",
+        "when": "textInputFocus"
     }
+    ,{
+        "key": "shift+alt+down",
+        "command": "editor.action.insertCursorBelow",
+        "when": "textInputFocus"
+    }
+    // ----------------------------------------------------
+    // 複製系
+    // ----------------------------------------------------
     // 選択した行を複製する
     ,{
         "key": "cmd+d",
         "command": "editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     }
-    // コマンドを無効にする
+    // ----------------------------------------------------
+    // 置換系
+    // ----------------------------------------------------
+    // 選択した変数名を一括置換する
     ,{
-        "key": "ctrl+cmd+[",
-        "command": ""
+        "key": "cmd+alt+e",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     }
-    ,{
-        "key": "ctrl+cmd+]",
-        "command": ""
-    }
-    // カーソルの下に改行を入れる
-    ,{
-        "key": "cmd+enter",
-        "command": "lineBreakInsert",
-        "when": "editorTextFocus && !editorReadonly"
-    }
-    // タブ移動する
-    ,{
-        "key": "shift+cmd+[",
-        "command": "workbench.action.previousEditor"
-    }
-    ,{
-        "key": "shift+cmd+]",
-        "command": "workbench.action.nextEditor"
-    }
-    // コンソールを開かせない
-    ,{
-        "key": "shift+cmd+c",
-        "command": "-workbench.action.terminal.openNativeConsole",
-        "when": "!terminalFocus"
-    }
-    // 小文字/大文字の変換
+    // 選択した文字を大文字/小文字に一括変換する
     ,{
         "key": "shift+cmd+x",
         "command": "editor.action.transformToUppercase",
@@ -106,32 +111,30 @@
         "command": "editor.action.transformToLowercase",
         "when": "editorTextFocus"
     }
-    // 対のカッコに移動する
+    // ----------------------------------------------------
+    // 操作系
+    // ----------------------------------------------------
+    // カーソルの下に改行を入れる
     ,{
-        "key": "ctrl+cmd+[",
-        "command": "editor.action.jumpToBracket",
-        "when": "editorTextFocus"
+        "key": "cmd+enter",
+        "command": "lineBreakInsert",
+        "when": "editorTextFocus && !editorReadonly"
     }
-    ,{
-        "key": "ctrl+cmd+]",
-        "command": "editor.action.jumpToBracket",
-        "when": "editorTextFocus"
-    }
-    // インデントを無効にする
-    ,{
-        "key": "cmd+[",
-        "command": "",
-        "when": ""
-    }
-    ,{
-        "key": "cmd+]",
-        "command": "",
-        "when": ""
-    }
-    // 言語を変更
+    // 言語を変更する
     ,{
         "key": "shift+cmd+l",
         "command": "workbench.action.editor.changeLanguageMode"
+    }
+    // コードジャンプを設定する
+    ,{
+        "key": "cmd+l",
+        "command": "workbench.action.gotoLine"
+    }
+    // ターミナルを開かないようにする
+    ,{
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
     }
     // View の選択切り替えを行う
     ,{
@@ -154,5 +157,28 @@
     ,{
         "key": "cmd+5",
         "command": "workbench.view.extensions"
+    }
+    // ----------------------------------------------------
+    // 無効化系
+    // ----------------------------------------------------
+    // インデントを無効にする
+    ,{
+        "key": "cmd+[",
+        "command": "",
+        "when": ""
+    }
+    ,{
+        "key": "cmd+]",
+        "command": "",
+        "when": ""
+    }
+    // コードの上下移動を無効にする
+    ,{
+        "key": "alt+down",
+        "command": ""
+    }
+    ,{
+        "key": "alt+up",
+        "command": ""
     }
 ]
