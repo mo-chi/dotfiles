@@ -81,59 +81,6 @@ gitignore.io() {
   fi
 }
 
-# ---------------------------------------------------------
-# ios simulation / android emulator utility common
-# ---------------------------------------------------------
-ios-sim() {
-  case $1 in
-  list)
-    xcrun simctl list devices
-    ;;
-  run)
-    if [ $# -gt 1 ]; then
-      open -a Simulator --args -CurrentDeviceUDID $2
-    else
-      echo 'Warning: no found deviceid'
-    fi
-    ;;
-  *)
-    echo 'Usage: ios {list|run deviceid}'
-    ;;
-  esac
-}
-
-droid-emu() {
-  case $1 in
-  list)
-    $HOME/Library/Android/sdk/tools/emulator -list-avds
-    ;;
-  run)
-    if [ $# -gt 1 ]; then
-      $HOME/Library/Android/sdk/tools/emulator -avd $2 &
-    else
-      echo 'Warning: no found deviceid'
-    fi
-    ;;
-  *)
-    echo 'Usage: droid {list|run deviceid}'
-    ;;
-  esac
-}
-
-mdctl() {
-  case $1 in
-  ios)
-    ios-sim $2 $3
-    ;;
-  droid)
-    droid-emu $2 $3
-    ;;
-  *)
-    echo 'Usage: {ios|droid} {list|run deviceid}'
-    ;;
-  esac
-}
-
 # ------------------------------------
 # custom history
 #
@@ -174,15 +121,4 @@ tab-color() {
 
 tab-reset() {
   echo -ne "\033]6;1;bg;*;default\a"
-}
-
-# ------------------------------------
-# Java
-# ------------------------------------
-java-versions() {
-  if which java > /dev/null; then
-    /usr/libexec/java_home -V
-  else
-    echo 'not found java'
-  fi
 }
